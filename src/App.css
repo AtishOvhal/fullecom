@@ -1,0 +1,46 @@
+/* Setting a min height for the card */
+.custom-card {
+  min-height: 400px; /* Adjust the value based on your design */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensuring the image has a 1:1 aspect ratio */
+.image-container {
+  width: 100%;
+  height: 0; /* Set height to 0 */
+  padding-top: 100%; /* This creates a square using padding */
+  position: relative;
+  overflow: hidden; /* Ensures any overflow is hidden */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain-fit;
+  aspect-ratio: 1/1; /* Ensures the image covers the container without distortion */
+}
+
+/* Clamp description to 3 lines */
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* aspect-ratio: 1/1; */
+  text-overflow: ellipsis;
+}
+.mt-header {
+  margin-top: 150px;
+}
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Scale up the card */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
